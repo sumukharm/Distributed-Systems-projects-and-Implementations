@@ -1,6 +1,6 @@
 # Distributed-Systems-projects-and-Implementations
 
-This is a growing list of proramming
+This is a growing list of programming
   - Distributed mutex: programming and testing correctness and performance
   - Distributed mutex: specifying and verifying safety and efficiency properties
   - Distributed consensus: optimizing and comparing Paxos and variants
