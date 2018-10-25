@@ -217,10 +217,5 @@ def main():
 
 
 
-# This is an executable specification of the algorithm described in
-# Lamport, L. (2001).  Paxos Made Simple.  ACM SIGACT News 
-# (Distributed Computing Column), 32(4):51-58, December.
 
-# This code includes setup and termination for running repeated rounds until
-# the learners all terminate after learning the consent value or timeout.
 
