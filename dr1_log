@@ -1,0 +1,145 @@
+<DR1:e4008> sending secrets to <DR1:e400b>
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e4009> sending secrets to <DR1:e4005>
+<DR1:e4007> sending secrets to <DR1:e4006>
+<DR1:e4006> sending secrets to <DR1:e400a>
+<DR1:e4002> sending secrets to <DR1:e4009>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e400a> sending secrets to <DR1:e4002>
+<DR1:e4005> sending secrets to <DR1:e4004>
+<DR1:e4004> sending secrets to <DR1:e4008>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+timeout
+<DR1:e4004> receiving secrets from <DR1:e4005>
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e4008> receiving secrets from <DR1:e4004>
+<DR1:e400b> receiving secrets from <DR1:e4008>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4008> sending secrets to <DR1:e400b>
+timeout
+<DR1:e4005> receiving secrets from <DR1:e4009>
+<DR1:e4006> receiving secrets from <DR1:e4007>
+<DR1:e4004> sending secrets to <DR1:e4008>
+<DR1:e4009> receiving secrets from <DR1:e4002>
+<DR1:e400a> receiving secrets from <DR1:e4006>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+<DR1:e4005> sending secrets to <DR1:e4004>
+timeout
+timeout
+<DR1:e4006> sending secrets to <DR1:e400a>
+timeout
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e4002> receiving secrets from <DR1:e400a>
+<DR1:e4002> sending secrets to <DR1:e4009>
+<DR1:e400b> receiving secrets from <DR1:e4008>
+<DR1:e4009> sending secrets to <DR1:e4005>
+<DR1:e4009> receiving secrets from <DR1:e4002>
+<DR1:e4009> sending secrets to <DR1:e4005>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4005> receiving secrets from <DR1:e4009>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+<DR1:e4004> receiving secrets from <DR1:e4005>
+<DR1:e4004> sending secrets to <DR1:e4008>
+<DR1:e4008> receiving secrets from <DR1:e4004>
+<DR1:e4008> receiving secrets from <DR1:e4004>
+<DR1:e4008> sending secrets to <DR1:e400b>
+<DR1:e400b> receiving secrets from <DR1:e4008>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4007> sending secrets to <DR1:e4006>
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e400a> sending secrets to <DR1:e4002>
+<DR1:e4005> receiving secrets from <DR1:e4009>
+<DR1:e4006> receiving secrets from <DR1:e4007>
+<DR1:e400a> receiving secrets from <DR1:e4006>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4007> sending secrets to <DR1:e4006>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4007> sending secrets to <DR1:e4006>
+<DR1:e4006> sending secrets to <DR1:e400a>
+<DR1:e4006> receiving secrets from <DR1:e4007>
+<DR1:e4006> receiving secrets from <DR1:e4007>
+<DR1:e4006> sending secrets to <DR1:e400a>
+<DR1:e4002> receiving secrets from <DR1:e400a>
+<DR1:e4002> sending secrets to <DR1:e4009>
+<DR1:e4009> receiving secrets from <DR1:e4002>
+<DR1:e4009> sending secrets to <DR1:e4005>
+<DR1:e4005> sending secrets to <DR1:e4004>
+<DR1:e4005> receiving secrets from <DR1:e4009>
+<DR1:e4005> sending secrets to <DR1:e4004>
+<DR1:e4004> receiving secrets from <DR1:e4005>
+<DR1:e4004> receiving secrets from <DR1:e4005>
+<DR1:e4004> sending secrets to <DR1:e4008>
+<DR1:e4008> receiving secrets from <DR1:e4004>
+<DR1:e4008> sending secrets to <DR1:e400b>
+<DR1:e400b> receiving secrets from <DR1:e4008>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4007> sending secrets to <DR1:e4006>
+<DR1:e4006> receiving secrets from <DR1:e4007>
+<DR1:e4006> sending secrets to <DR1:e400a>
+<DR1:e400a> sending secrets to <DR1:e4002>
+<DR1:e400a> receiving secrets from <DR1:e4006>
+<DR1:e400a> receiving secrets from <DR1:e4006>
+<DR1:e4002> receiving secrets from <DR1:e400a>
+<DR1:e4002> sending secrets to <DR1:e4009>
+<DR1:e400a> receiving secrets from <DR1:e4006>
+<DR1:e4009> receiving secrets from <DR1:e4002>
+<DR1:e4009> sending secrets to <DR1:e4005>
+<DR1:e400a> sending secrets to <DR1:e4002>
+<DR1:e4005> receiving secrets from <DR1:e4009>
+<DR1:e4005> sending secrets to <DR1:e4004>
+<DR1:e4002> receiving secrets from <DR1:e400a>
+<DR1:e4004> receiving secrets from <DR1:e4005>
+<DR1:e4004> sending secrets to <DR1:e4008>
+<DR1:e4002> sending secrets to <DR1:e4009>
+<DR1:e4008> receiving secrets from <DR1:e4004>
+<DR1:e4008> sending secrets to <DR1:e400b>
+<DR1:e4009> receiving secrets from <DR1:e4002>
+<DR1:e4009> sending secrets to <DR1:e4005>
+<DR1:e400b> receiving secrets from <DR1:e4008>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+<DR1:e4005> receiving secrets from <DR1:e4009>
+<DR1:e4005> sending secrets to <DR1:e4004>
+<DR1:e4003> sending secrets to <DR1:e4007>
+<DR1:e4007> receiving secrets from <DR1:e4003>
+<DR1:e4004> receiving secrets from <DR1:e4005>
+<DR1:e4004> sending secrets to <DR1:e4008>
+<DR1:e4008> receiving secrets from <DR1:e4004>
+<DR1:e4008> sending secrets to <DR1:e400b>
+<DR1:e400b> receiving secrets from <DR1:e4008>
+<DR1:e400b> sending secrets to <DR1:e4003>
+<DR1:e4003> receiving secrets from <DR1:e400b>
+
+<DR1:e4008> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+
+<DR1:e4003> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+<DR1:e400b> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+<DR1:e4007> learnt all the secrets
+TESTING CORRECTNESS - my entries 10finished
+
+<DR1:e400a> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+<DR1:e4002> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+<DR1:e4006> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+<DR1:e4009> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+<DR1:e4005> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+
+
+
+<DR1:e4004> learnt all the secrets
+TESTING CORRECTNESS - my entries 10

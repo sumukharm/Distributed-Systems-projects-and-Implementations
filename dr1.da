@@ -1,0 +1,85 @@
+import sys
+import time
+from random import randint
+from statistics import stdev
+
+'''
+class for Ring protocol 1, where:
+Agent i calls his successor, agent i⊕1, if i is familiar with some secret and he knows that
+his successor is not familiar with it.
+This protocol follows push mode of communication
+'''
+class DR1(process):
+	#Initialising data structures
+	def setup(successor, secret, t:int, n:int, mLoss:int, mDelay:int):
+		#data structure to keep track of successor's secret
+		self.successorSecrets = set()
+		#data structure to keep track of all known secrets
+		self.knownSecrets = set()
+		#exit condition of the protocol, which is initially false
+		self.exitCondition = False
+		#adding self's secret to known secrets' set
+		knownSecrets.add(secret)
+
+
+	def gossip():
+		''' 
+		Core function of the ring protocol 1, contains the protocol specific logic.
+		Agent i calls his successor, agent i⊕1, if i is familiar with some secret and he knows that
+		his successor is not familiar with it.
+		This protocol follows push mode of communication
+		'''
+		-- yeild
+		exitCondition = True
+		''' Agent checks that if there exists a secret which he knows
+		but his/her successor is not aware, then he calls his/her successor '''
+		for knownSecret in knownSecrets: 
+			if knownSecret not in successorSecrets:
+				#Exit condition remains true if none were found
+				exitCondition = False
+
+				#pushing secrets to node i+1 to help it learn atleast one unknown secret, according to agent i
+				print("{} sending secrets to {}".format(self, successor),flush=True)
+				pushedSecrets = set(knownSecrets)
+				send(('push', pushedSecrets, self), to= successor)
+
+				#if message was successfully sent, add the pushed secrets of known set of successor's secret
+				if await(received(('ack', ), from_=successor)):
+					successorSecrets = successorSecrets.union(pushedSecrets)
+				elif timeout(t):
+					print('timeout',flush=True)
+
+		# if all secrets known to agent i are also known to agent i+1, then terminate the protocol
+		# Additional length check is added to keep the protocol running until every agent is finished
+		if exitCondition and len(knownSecrets) == n:
+			send(('done',), to=self)
+			send(('done',), to=parent())
+
+
+	'''function called when an agent receives secret from its predecessor.
+	All the received secrets are added to the known set of secrets
+	'''
+	def receive(msg= ('push', secrets, predecessor)):
+		print("{} receiving secrets from {}".format(self, predecessor),flush=True)
+		send(('ack', ), to=predecessor)
+
+		#All secrets received from predecessor, add that to node's learnt secrets set
+		knownSecrets = knownSecrets.union(secrets)
+
+
+	def run():
+		#An agent will keep gossiping until it's exit condition is true according to the protocol.
+		while not received(('done',), from_=self):
+			gossip()
+		
+		#Await to keep the node alive to receive messages, until every agent is done with gossiping
+		await(received(('done',), from_=parent()))
+
+		'''Correctness Test: 
+		If the number of known/learned secrets are equal to the total number of agents in the network,
+		then an agent is an expert and the protocol is correct
+		'''
+		if(n==len(knownSecrets)):
+			print("<DR1>Testing correctness; Number of secrets learnt equals Number of different processes, Result :Verified",flush=True)
+		else:
+			print("<DR1>Failed in correctness testing",flush=True)

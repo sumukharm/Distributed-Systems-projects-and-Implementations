@@ -1,0 +1,142 @@
+<LNS:2000b> sending request secret to <LNS:20007>
+<LNS:20004> sending request secret to <LNS:20005>
+<LNS:2000a> sending request secret to <LNS:20006>
+<LNS:20008> sending request secret to <LNS:20002>
+<LNS:20003> sending request secret to <LNS:2000a>
+<LNS:20009> sending request secret to <LNS:2000a>
+<LNS:20006> sending request secret to <LNS:2000a>
+<LNS:20002> sending request secret to <LNS:20003>
+<LNS:20005> sending request secret to <LNS:20006>
+<LNS:20007> sending request secret to <LNS:20009>
+<LNS:20008> receiving secret entries from <LNS:20002>, begins upating its entires
+<LNS:20002> receiving secret entries from <LNS:20003>, begins upating its entires
+<LNS:20006> receiving secret entries from <LNS:2000a>, begins upating its entires
+<LNS:20005> receiving secret entries from <LNS:20006>, begins upating its entires
+<LNS:20004> receiving secret entries from <LNS:20005>, begins upating its entires
+<LNS:20008> sending request secret to <LNS:20005>
+<LNS:20002> sending request secret to <LNS:20004>
+<LNS:20006> sending request secret to <LNS:20002>
+<LNS:20009> receiving secret entries from <LNS:2000a>, begins upating its entires
+<LNS:20005> sending request secret to <LNS:2000a>
+<LNS:2000b> receiving secret entries from <LNS:20007>, begins upating its entires
+<LNS:20007> receiving secret entries from <LNS:20009>, begins upating its entires
+<LNS:2000a> receiving secret entries from <LNS:20006>, begins upating its entires
+<LNS:20003> receiving secret entries from <LNS:2000a>, begins upating its entires
+<LNS:20004> sending request secret to <LNS:2000b>
+<LNS:20009> sending request secret to <LNS:2000b>
+<LNS:2000b> sending request secret to <LNS:20009>
+<LNS:20007> sending request secret to <LNS:20005>
+<LNS:2000a> sending request secret to <LNS:20002>
+<LNS:20003> sending request secret to <LNS:20006>
+<LNS:20008> receiving secret entries from <LNS:20005>, begins upating its entires
+<LNS:20006> receiving secret entries from <LNS:20002>, begins upating its entires
+<LNS:20004> receiving secret entries from <LNS:2000b>, begins upating its entires
+<LNS:20003> receiving secret entries from <LNS:20006>, begins upating its entires
+<LNS:20008> sending request secret to <LNS:20003>
+<LNS:20002> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20006> sending request secret to <LNS:20009>
+<LNS:2000a> receiving secret entries from <LNS:20002>, begins upating its entires
+<LNS:20005> receiving secret entries from <LNS:2000a>, begins upating its entires
+<LNS:20004> sending request secret to <LNS:20003>
+<LNS:20003> sending request secret to <LNS:20002>
+<LNS:20007> receiving secret entries from <LNS:20005>, begins upating its entires
+<LNS:20002> sending request secret to <LNS:20007>
+<LNS:2000a> sending request secret to <LNS:20004>
+<LNS:2000b> receiving secret entries from <LNS:20009>, begins upating its entires
+<LNS:20005> sending request secret to <LNS:20003>
+<LNS:20007> sending request secret to <LNS:2000b>
+<LNS:20009> receiving secret entries from <LNS:2000b>, begins upating its entires
+<LNS:2000b> sending request secret to <LNS:20008>
+<LNS:20006> receiving secret entries from <LNS:20009>, begins upating its entires
+<LNS:20008> receiving secret entries from <LNS:20003>, begins upating its entires
+<LNS:20009> sending request secret to <LNS:20004>
+<LNS:20006> sending request secret to <LNS:20005>
+<LNS:2000a> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20002> receiving secret entries from <LNS:20007>, begins upating its entires
+<LNS:20008> sending request secret to <LNS:2000b>
+<LNS:2000a> sending request secret to <LNS:20008>
+<LNS:20007> receiving secret entries from <LNS:2000b>, begins upating its entires
+<LNS:20002> sending request secret to <LNS:20008>
+<LNS:20004> receiving secret entries from <LNS:20003>, begins upating its entires
+<LNS:20006> receiving secret entries from <LNS:20005>, begins upating its entires
+<LNS:20009> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20007> sending request secret to <LNS:20008>
+<LNS:20003> receiving secret entries from <LNS:20002>, begins upating its entires
+<LNS:20005> receiving secret entries from <LNS:20003>, begins upating its entires
+<LNS:20004> sending request secret to <LNS:20002>
+<LNS:20006> sending request secret to <LNS:20004>
+<LNS:20009> sending request secret to <LNS:20006>
+<LNS:2000b> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:20003> sending request secret to <LNS:20007>
+<LNS:20005> sending request secret to <LNS:2000b>
+<LNS:2000b> sending request secret to <LNS:20004>
+<LNS:2000a> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:20009> receiving secret entries from <LNS:20006>, begins upating its entires
+<LNS:20002> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:2000a> sending request secret to <LNS:20009>
+<LNS:20003> receiving secret entries from <LNS:20007>, begins upating its entires
+<LNS:20006> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20009> sending request secret to <LNS:20008>
+<LNS:20002> sending request secret to <LNS:2000b>
+<LNS:20008> receiving secret entries from <LNS:2000b>, begins upating its entires
+<LNS:20005> receiving secret entries from <LNS:2000b>, begins upating its entires
+<LNS:20003> sending request secret to <LNS:20008>
+<LNS:20007> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:20004> receiving secret entries from <LNS:20002>, begins upating its entires
+<LNS:20008> sending request secret to <LNS:20004>
+<LNS:20005> sending request secret to <LNS:20004>
+<LNS:20007> sending request secret to <LNS:20004>
+<LNS:20006> sending request secret to <LNS:20008>
+<LNS:20004> sending request secret to <LNS:20008>
+<LNS:2000b> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20002> receiving secret entries from <LNS:2000b>, begins upating its entires
+<LNS:2000a> receiving secret entries from <LNS:20009>, begins upating its entires
+<LNS:20003> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:20005> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20007> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20009> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:20006> receiving secret entries from <LNS:20008>, begins upating its entires
+<LNS:20008> receiving secret entries from <LNS:20004>, begins upating its entires
+<LNS:20004> receiving secret entries from <LNS:20008>, begins upating its entires
+
+<LNS:20004> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20005> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+-------------------------------------
+
+<LNS:2000a> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20008> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20003> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:2000b> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20006> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20009> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20002> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+
+<LNS:20007> learnt all the secrets
+TESTING CORRECTNESS - my entries 10
+terminating
+Average time of 1 runs : 1.2189107000000001

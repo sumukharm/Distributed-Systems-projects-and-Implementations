@@ -1,0 +1,89 @@
+import sys
+import glob
+import os
+import time
+from random import randint
+
+'''
+class for Learn New Secret, where:
+Agent i calls agent j if i is not familiar with j’s secret
+This protocol follows pull mode of communication
+'''
+class LNS(process):
+	#Initialising data structures
+	def setup(s:set, secret, tout:int, n:int, mlossrate:int, msg_delay:int):
+		#Initialise a local dictionary which maps nodes to their secrets, initially every secret is empty (0)
+		self.entries={}
+		for ele in s:
+			self.entries[ele]=0
+		#marking self's secret to known secrets' set
+		self.entries[self]=1
+		#exit condition of the protocol, which is initially false
+		self.exitCondition = False
+
+
+	def gossip():
+		'''
+		Core function of the protocol Learn New Secret, contains the protocol specific logic.
+		Agent i calls agent j if i is not familiar with j’s secret
+		This protocol follows pull mode of communication
+		'''
+		count=1
+		'''Keep gossiping until the agent knows/learned all other secrets'''
+		while 1:
+			exitCondition = True
+			
+			for ele in self.entries:
+				if self.entries[ele]==0:
+					#Exit condition remains true if all the secrets were known
+					exitCondition = False
+					
+					#Send a pull request to the other agent				
+					print("{} sending pull request to {}".format(self,ele), flush=True)
+					send(('pull',self), to=ele)	
+					#wait till receipt of the dictionary
+					if await(len(setof(ele,received(('push', _,ele), from_ =ele)))==count):
+						count+=1
+					elif timeout(tout):
+						pass
+
+			if exitCondition:
+				break
+
+
+	'''function called when an agent receives secret from the callee agent.
+	All the received secrets are added to the known set of secrets
+	'''
+	def receive(msg=('push',secret_entries,p)):		
+		print("{} receiving secret entries from {}, begins upating its entires".format(self,p), flush=True)
+		#learn all secrets from hashmap of process pushing the secrets
+		for ele2 in secret_entries:
+			if secret_entries[ele2]==1:				
+				self.entries[ele2]=1
+
+
+	'''function called when an agent receives a pull request from the caller agent.
+	Agent forwards all its secret to the caller agent
+	'''
+	def receive(msg=('pull',p)):		
+		#disseminate hashmap of secrets
+		print("{} sending request secret to {}".format(self, p), flush=True)
+		send(('push',self.entries,self),to=p)
+
+
+	def run():
+		#An agent will start gossiping until it's exit condition is true according to the protocol.
+		gossip()
+		#Send done to parent the agent is finished gossiping
+		send(('done', self), to= parent())
+		#Await to keep the node alive to receive messages, until every agent is done with gossiping
+		await(received(('done',), from_=parent()))
+		
+		'''Correctness Test: 
+		If the number of known/learned secrets are equal to the total number of agents in the network,
+		then an agent is an expert and the protocol is correct
+		'''
+		if(sum(entries.values())==len(entries)):
+			print("<LNS>Testing correctness; Number of secrets learnt equals Number of different processes, Result :Verified",flush=True)
+		else:
+			print("<LNS>Failed in correctness testing",flush=True)

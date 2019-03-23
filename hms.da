@@ -1,0 +1,91 @@
+import sys
+import time
+from random import randint
+from statistics import stdev
+
+'''
+class for Hear My Secret, where:
+Agent i calls agent j if he (agent i) does not know whether j is familiar with his secret.
+This protocol follows push mode of communication
+'''
+class HMS(process):
+
+
+	#Initialising data structures
+	def setup(agents:set, secret, tout:int, n:int, mLoss:int, mDelay:int):
+		#data structure to keep track of agents which are familiar with i's secret
+		self.AgentWithMySecret = set()
+		#data structure to keep track of all known secrets
+		self.knownSecrets = set()
+		#exit condition of the protocol, which is initially false
+		self.exitCondition = False
+		#adding self's secret to known secrets' set
+		knownSecrets.add(secret)
+
+
+	
+	def gossip():
+		''' 
+		Core function of the protocol Hear My Secret, contains the protocol specific logic.
+		Agent i calls agent j if he (agent i) does not know whether j is familiar with his secret.
+		This protocol follows push mode of communication
+		'''
+		-- yeild
+		exitCondition = True
+		for agent in agents:
+			'''check if there's atleast one agent which is not aware of his/her secret. 
+			If not, then the exit condition remains true.
+			'''
+			if agent not in AgentWithMySecret:
+				exitCondition = False
+				print("{} sending secret to {}".format(self,agent), flush=True)
+				#Agent pushes all his known secret to the other agent
+				send(('push', knownSecrets, self), to=agent)
+
+				#If the caller agent doesn't receive an 'ack' within the timeout,
+				#it assumes the message was lost and resumes it's gossiping
+				if await(received(('ack', ), from_=agent)):
+					AgentWithMySecret.add(agent)
+				elif timeout(tout):
+					print('timeout', flush=True)
+
+		#check if the exit condition is true,
+		#if true, stop gossiping.
+		if exitCondition:
+			send(('done',), to=self)
+			send(('done',), to=parent())
+
+
+	
+	def receive(msg= ('push', secrets, predecessor)):
+		'''function called when an agent receives secret from the caller agent.
+		All the received secrets are added to the known set of secrets
+		'''
+		print("{} receiving secret entries from {}".format(self, predecessor),flush=True)
+		send(('ack', ), to=predecessor)
+
+		''' If csller agent is familiar with his/her secret, 
+		then add them to the set of known agents'''
+		if secret in secrets:
+			AgentWithMySecret.add(predecessor)
+
+		#Add the received secrets to the exisitng set of known secrets
+		knownSecrets = knownSecrets.union(secrets)
+
+
+	def run():
+		#An agent will keep gossiping until it's exit condition is true according to the protocol.
+		while not received(('done',), from_=self):
+			gossip()
+
+		#Await to keep the node alive to receive messages, until every agent is done with gossiping
+		await(received(('done',), from_=parent()))
+		
+		'''Correctness Test: 
+		If the number of known/learned secrets are equal to the total number of agents in the network,
+		then an agent is an expert and the protocol is correct
+		'''
+		if(n==len(knownSecrets)):
+			print("<HMS>Testing correctness; Number of secrets learnt equals Number of different processes, Result :Verified",flush=True)
+		else:
+			print("<HMS>Failed in correctness testing",flush=True)

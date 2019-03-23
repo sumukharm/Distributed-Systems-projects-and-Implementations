@@ -1,0 +1,105 @@
+import sys
+import time
+
+'''
+class for Ring protocol 2, where:
+agent i calls his successor, which is agent i⊕1, 
+if i does not know that his successor is familiar with the secret of i’s predecessor, i.e., agent i⊖1.
+This protocol follows push-pull mode of communication
+'''
+class DR2(process):
+	#Initialising data structures
+	def setup(successor, secret, t:int, n:int, mLoss:int, mDelay:int):
+		#data structure to keep track of successor's secret
+		self.successorSecrets = set()
+		#data structure to keep track of all known secrets
+		self.knownSecrets = set()
+		#exit condition of the protocol, which is initially false
+		self.knowsPredcessorsSecret = False
+		#data structure to keep track of predecessor's secret
+		self.predecessorSecret = list()
+		#adding self's secret to known secrets' set
+		knownSecrets.add(secret)
+		self.count = 0
+
+
+
+	def gossip():
+		''' 
+		Core function of the ring protocol 2, contains the protocol specific logic.
+		Agent i calls his successor, which is agent i⊕1, 
+		if i does not know that his successor is familiar with the secret of i’s predecessor, i.e., agent i⊖1.
+		This protocol follows push-pull mode of communication
+		'''
+		-- yeild
+		''' Agent checks that if his successor doesnot know his predecessor's secret then the agent
+		pushes its own secret to his successor and pulls secret from the successor'''
+		if not knowsPredcessorsSecret:
+			
+			#pushing secrets to node i+1 to help it learn atleast one unknown secret, according to agent i
+			pushedSecrets = set(knownSecrets)
+			print("{} sending secrets to {}".format(self, successor),flush=True)
+			send(('pp-push', pushedSecrets, secret, self), to= successor)
+			count = count + 1
+			
+			#wait till node i has received the pulled secrets from the successor
+			if await(len(setof(s, received(('pp-pull', _, _), from_=s))) == count):
+				pass
+			elif timeout(t):
+				print('timeout',flush=True)
+		else:
+			send(('done',), to=self)
+
+
+	'''function called when an agent receives secret from its predecessor.
+	'''
+	def receive(msg= ('pp-push', secrets, predecessorsSecret, predecessor)):
+		print("{} receiving secrets from {}".format(self, predecessor),flush=True)
+		
+		#Predecessor's secret is saved
+		predecessorSecret.append(predecessorsSecret)
+		#All the received secrets are added to the known set of secrets
+		knownSecrets = knownSecrets.union(secrets)
+		
+		#if node i+1 knows the secret of node i-1, set the knowsPredecessorsSecret boolean to true
+		# basically the exit condition is true now
+		if predecessorsSecret in successorSecrets:
+			knowsPredcessorsSecret = True
+		
+		#Send his own secrets as part of pull request
+		send(('pp-pull', knownSecrets, self), to= predecessor)
+		
+
+	'''function called when an agent receives secret from its successor.
+	'''
+	def receive(msg= ('pp-pull', secrets, successor)):
+		print("{} receiving secrets from {}".format(self, successor),flush=True)
+		
+		#All the received secrets are added to the known set of sucessor's secrets
+		successorSecrets = successorSecrets.union(secrets)
+		#All the received secrets are added to the known set of own's secrets
+		knownSecrets = knownSecrets.union(secrets)
+
+		#if node i+1 knows the secret of node i-1, set the knowsPredecessorsSecret boolean to true
+		# basically the exit condition is true now
+		if predecessorSecret and predecessorSecret[0] in successorSecrets:
+			knowsPredcessorsSecret = True
+
+	def run():
+		#An agent will keep gossiping until it's exit condition is true according to the protocol.
+		while not received(('done',), from_=self):
+			gossip()
+		
+		#Sends done to parent to indicate that he is done with gossiping
+		send(('done',), to=parent())
+		#Await to keep the node alive to receive messages, until every agent is done with gossiping
+		await(received(('done',), from_=parent()))
+
+		'''Correctness Test: 
+		If the number of known/learned secrets are equal to the total number of agents in the network,
+		then an agent is an expert and the protocol is correct
+		'''
+		if(n==len(knownSecrets)):
+			print("<DR2>Testing correctness; Number of secrets learnt equals Number of different processes, Result :Verified",flush=True)
+		else:
+			print("<DR2>Failed in correctness testing",flush=True)
